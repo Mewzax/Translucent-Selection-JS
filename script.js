@@ -10,7 +10,6 @@ selection.on('start', ({store, event}) => {
         for (const el of store.stored) {
             el.classList.remove('selected');
         }
-
         selection.clearSelection();
     }
 })
@@ -20,8 +19,6 @@ selection.on('move', ({store: {changed: {added, removed}}}) => {
     for (const el of added) {
         el.classList.add('selected');
     }
-    console.log(added, removed);
-
     for (const el of removed) {
         el.classList.remove('selected');
     }
@@ -32,5 +29,4 @@ selection.on('beforestart', ({ store, event }) => {
     for (const el of store.stored) {
         el.classList.remove('selected');
     }
-    console.log(store.stored);
 })
